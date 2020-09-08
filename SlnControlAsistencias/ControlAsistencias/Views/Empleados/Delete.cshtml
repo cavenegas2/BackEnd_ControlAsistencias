@@ -1,0 +1,88 @@
+﻿@model BEUAsistencia.Empleado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Esta seguro que desea eliminar</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_completo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.correo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lugar_nacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lugar_nacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado_civil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado_civil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.area_trabajo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.area_trabajo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar a la Lista", "Index", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

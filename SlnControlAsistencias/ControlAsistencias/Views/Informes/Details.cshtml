@@ -1,0 +1,50 @@
+﻿@model BEUAsistencia.Informe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Informe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.pago_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pago_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dias_trabajo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dias_trabajo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asistencia.id_asis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asistencia.id_asis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.nombre_completo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.nombre_completo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }, new { @class = "btn btn-info" }) 
+    @Html.ActionLink("Regresar a la Lista", "Index", null, new { @class = "btn btn-warning" })
+</p>

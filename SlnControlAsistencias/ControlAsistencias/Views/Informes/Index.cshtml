@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BEUAsistencia.Informe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Informe</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pago_empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dias_trabajo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistencia.id_asis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.nombre_completo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pago_empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dias_trabajo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asistencia.id_asis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.nombre_completo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }, new { @class = "btn btn-info" }) 
+            @Html.ActionLink("Detalles", "Details", new { id=item.id }, new { @class = "btn btn-warning" }) 
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

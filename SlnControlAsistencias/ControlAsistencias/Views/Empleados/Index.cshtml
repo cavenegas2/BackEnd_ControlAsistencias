@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BEUAsistencia.Empleado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Empleados</h2>
+
+<p>
+    @Html.ActionLink("Crear", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_completo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lugar_nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado_civil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.area_trabajo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_completo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lugar_nacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado_civil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.area_trabajo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_emp }, new { @class = "btn btn-info" }) 
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_emp }, new { @class = "btn btn-warning" }) 
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_emp }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

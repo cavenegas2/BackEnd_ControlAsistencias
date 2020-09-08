@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BEUAsistencia.Asistencia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Asistencias</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_ingreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_salida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_emp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_ingreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_salida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.nombre_completo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_asis } ,new { @class = "btn btn-info" }) 
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_asis }, new { @class = "btn btn-warning" }) 
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id_asis }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
